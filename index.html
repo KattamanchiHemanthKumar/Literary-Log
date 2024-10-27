@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literary Log</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Literary Log</h1>
+        <div class="grid-container">
+            <div class="history-container">
+                <div class="history-item">
+                    <button id="countButton">Count Books</button>
+                    <div id="countHistory"></div>
+                </div>
+                <div class="history-item">
+                    <button id="historyButton">Book History</button>
+                    <div id="bookHistory"></div>
+                </div>
+                <div class="history-item">
+                    <button id="authorHistoryButton">Author History</button>
+                    <div id="authorHistory"></div>
+                </div>
+                <div class="history-item">
+                    <button id="customerHistoryButton">Customer History</button>
+                    <div id="customerHistory"></div>
+                </div>
+            </div>
+
+            <div class="book-container">
+                <form id="libraryForm" class="form-container">
+                    <div class="form-group">
+                        <button type="button" class="form-label">Book Name</button>
+                        <input type="text" class="form-control" id="bookName" placeholder="Enter book name">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="form-label">Author</button>
+                        <input type="text" class="form-control" id="author" placeholder="Enter author name">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="form-label">Customer Name</button>
+                        <input type="text" class="form-control" id="customerName" placeholder="Enter customer name">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Book</button>
+                </form>
+
+                <div id="message" class="message"></div>
+
+                <table class="table mt-4">
+                    <thead>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>Author</th>
+                            <th>Customer Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
