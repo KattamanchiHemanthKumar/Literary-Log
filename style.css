@@ -1,141 +1,168 @@
+:root {
+    --primary-color: #4CAF50;
+    --danger-color: #f44336;
+    --background-color: #f0f0f0;
+    --border-color: #ccc;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(240, 240, 240);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 .container {
-    max-width: 960px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 20px;
+    gap: 2rem;
 }
 
-.history-container {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-}
-
-.history-item {
-    margin-bottom: 10px;
-}
-
-.history-item button {
-    margin-bottom: 5px;
-    background-color: rgb(76, 175, 80);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-}
-
-
-.form-container {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #f0f0f0;
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
 }
 
 .form-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
-.form-label {
-    background-color: rgb(76, 175, 80);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: default;
-    margin-right: 10px;
-    width: 150px;
-    text-align: left;
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .form-control {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid rgb(204, 204, 204);
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
-    background-color: rgb(76, 175, 80);
+    background-color: var(--primary-color);
     color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
 }
 
-.table-container {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.table-responsive {
+    overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 1rem;
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    padding: 1rem;
     text-align: left;
+    border-bottom: 1px solid var(--border-color);
 }
 
 th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-    color: #333;
-}
-
-.remove-book {
-    background-color: rgb(244, 67, 54);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
+    background-color: #f8f9fa;
+    font-weight: 600;
 }
 
 .message {
-    color: rgb(255, 0, 0);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    display: none;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.stat-number {
+    font-size: 2rem;
     font-weight: bold;
+    color: var(--primary-color);
 }
 
-.history-item div {
-    padding: 5px;
-    height: auto;
-    border: 1px solid rgb(204, 204, 204);
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    font-size: 14px; 
-    margin-bottom: 5px;
+.search-container {
+    margin-bottom: 1rem;
 }
 
-#countHistory, #bookHistory, #authorHistory, #customerHistory {
-    padding: 5px; 
-    font-size: 14px;
-    min-height: 30px;
+.filter-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

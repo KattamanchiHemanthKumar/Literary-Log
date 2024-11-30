@@ -3,66 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Literary Log</title>
     <link rel="stylesheet" href="style.css">
+    <title>SmartLiber Pro</title>
 </head>
 <body>
-    <div class="container mt-4">
-        <h1>Literary Log</h1>
+    <div class="container">
+        <div class="header">
+            <h1>📚 SmartLiber Pro</h1>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" id="totalBooks">0</div>
+                <div>Total Books</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalAuthors">0</div>
+                <div>Unique Authors</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalCustomers">0</div>
+                <div>Active Customers</div>
+            </div>
+        </div>
+
         <div class="grid-container">
-            <div class="history-container">
-                <div class="history-item">
-                    <button id="countButton">Count Books</button>
-                    <div id="countHistory"></div>
-                </div>
-                <div class="history-item">
-                    <button id="historyButton">Book History</button>
-                    <div id="bookHistory"></div>
-                </div>
-                <div class="history-item">
-                    <button id="authorHistoryButton">Author History</button>
-                    <div id="authorHistory"></div>
-                </div>
-                <div class="history-item">
-                    <button id="customerHistoryButton">Customer History</button>
-                    <div id="customerHistory"></div>
+            <div class="side-panel">
+                <div class="card">
+                    <h2>Add New Book</h2>
+                    <form id="libraryForm">
+                        <div class="form-group">
+                            <label for="bookName">Book Name</label>
+                            <input type="text" id="bookName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="author">Author</label>
+                            <input type="text" id="author" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerName">Customer Name</label>
+                            <input type="text" id="customerName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="issueDate">Issue Date</label>
+                            <input type="date" id="issueDate" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Book</button>
+                    </form>
+                    <div id="message" class="message"></div>
                 </div>
             </div>
 
-            <div class="book-container">
-                <form id="libraryForm" class="form-container">
-                    <div class="form-group">
-                        <button type="button" class="form-label">Book Name</button>
-                        <input type="text" class="form-control" id="bookName" placeholder="Enter book name">
+            <div class="main-content">
+                <div class="card">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search books, authors, or customers...">
                     </div>
-                    <div class="form-group">
-                        <button type="button" class="form-label">Author</button>
-                        <input type="text" class="form-control" id="author" placeholder="Enter author name">
+                    <div class="filter-container">
+                        <select id="filterType" class="form-control">
+                            <option value="all">All Books</option>
+                            <option value="overdue">Overdue Books</option>
+                            <option value="recent">Recently Added</option>
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <button type="button" class="form-label">Customer Name</button>
-                        <input type="text" class="form-control" id="customerName" placeholder="Enter customer name">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Book Name</th>
+                                    <th>Author</th>
+                                    <th>Customer</th>
+                                    <th>Issue Date</th>
+                                    <th>Days Issued</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
                     </div>
-                    <button type="submit" class="btn btn-primary">Add Book</button>
-                </form>
-
-                <div id="message" class="message"></div>
-
-                <table class="table mt-4">
-                    <thead>
-                        <tr>
-                            <th>Book Name</th>
-                            <th>Author</th>
-                            <th>Customer Name</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody"></tbody>
-                </table>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
